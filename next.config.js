@@ -41,6 +41,16 @@ const nextConfig = {
 //   devtool: "source-map",
 };
 
+const redirect = async redirects =>  {
+  return [
+    {
+      source: '/',
+      destination: '/excel',
+      permanent: true,
+    },
+  ]
+};
+
 module.exports = withPlugins(
   [
     withTM,
@@ -50,5 +60,18 @@ module.exports = withPlugins(
     withCSS,
     withBundleAnalyzer
   ],    
-  nextConfig
+  nextConfig,
+  redirect
   );
+
+//   module.exports = {
+//     async redirects() {
+//       return [
+//         {
+//           source: '/',
+//           destination: '/excel',
+//           permanent: true,
+//         },
+//       ]
+//     },
+// }
