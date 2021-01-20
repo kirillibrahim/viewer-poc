@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import Auth from '../authentication/reducer';
 import App from '@iso/redux/app/reducer';
 import Mails from '@iso/redux/mail/reducer';
 import Calendar from '@iso/redux/calendar/reducer';
@@ -28,7 +27,6 @@ import timeseries from './timeseries/reducer';
 import excel from './excel/reducer';
 
 export default combineReducers({
-  Auth,
   App,
   ThemeSwitcher,
   LanguageSwitcher,
