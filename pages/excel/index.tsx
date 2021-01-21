@@ -3,20 +3,15 @@
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { useEffect, useState } from 'react';
-//import { wrapper } from '../../redux/store'
 import dynamic from 'next/dynamic';
 import loadOffice from '../../Components/excel/loadOffice'
 import basicStyle from "@iso/assets/styles/constants";
 import ExcelLayoutWrapper from "../../Components/excel/excelLayoutWrapper";
-import { isServer } from '../../lib/helpers/utils'
 import { emit } from "jetemit";
 import { getGlobal } from '../../Components/excel/commands'
 import {
     ensureStateInitialized,
-    SetStartupBehaviorHelper,
-    SetRuntimeVisibleHelper,
     updateRibbon,
-    connectService,
     monitorSheetChanges,
     removeSetting
 } from '../../Components/excel/utilities/office-apis-helpers';
@@ -30,7 +25,14 @@ import {
     validate
 } from '../../Components/excel/functions';
 import ExcelLayout from '../../containers-ql/DashBoardLayout/ExcelLayout';
-import { useSelector } from "react-redux";
+import getConfig from 'next/config'
+
+// Only holds serverRuntimeConfig and publicRuntimeConfig
+const { serverRuntimeConfig, publicRuntimeConfig } = getConfig()
+// Will only be available on the server-side
+console.log(serverRuntimeConfig.mySecret)
+// Will be available on both server-side and client-side
+console.log(publicRuntimeConfig.staticFolder)
 
 //import OfficeWrapper from '../../Components/excel/officeWrapper'
 
@@ -75,22 +77,20 @@ function addHandlers() {
 
 }
 
-async function onWorksheetCollectionChanged(args: Excel.WorksheetChangedEventArgs)
-{
-    Excel.run(function (ctx) { 
-        var worksheet = ctx.workbook.worksheets.getItem(args.worksheetId).load("name"); 
-        return ctx.sync().then(function () { 
+async function onWorksheetCollectionChanged(args: Excel.WorksheetChangedEventArgs) {
+    Excel.run(function (ctx) {
+        var worksheet = ctx.workbook.worksheets.getItem(args.worksheetId).load("name");
+        return ctx.sync().then(function () {
             var g = getGlobal() as any;
             console.log("onChanged: " + JSON.stringify(args));
-            if (args.details != null && args.details.valueTypeAfter == "Empty")
-            {
+            if (args.details != null && args.details.valueTypeAfter == "Empty") {
                 console.log("removing settings for " + worksheet.name + "!" + args.address)
                 removeSetting(worksheet.name + "!" + args.address);
-            }    
-        }); 
-    }).catch(function (error) { 
-    console.log(error); 
-    }); 
+            }
+        });
+    }).catch(function (error) {
+        console.log(error);
+    });
 }
 
 async function onWorksheetCollectionSelectionChange(args: Excel.WorksheetSelectionChangedEventArgs) {
@@ -98,7 +98,7 @@ async function onWorksheetCollectionSelectionChange(args: Excel.WorksheetSelecti
         emit("SelectionChanged", args.address)
         console.log(`WorksheetCollection event: The address of new selection is: ${args.address}`);
     });
-  }
+}
 
 function handleSelectionChange(event) {
     return Excel.run(function (ctx) {
@@ -136,7 +136,7 @@ loadOffice(() => {
             CustomFunctions.associate("TIMESERIESFILTERED", timeseriesfiltered);
             CustomFunctions.associate("STREAM", stream);
             CustomFunctions.associate("METRICS", validate);
-            
+
             console.log("4. after custom functions")
             updateRibbon();
             console.log("5. after updateRibbon")
@@ -146,6 +146,6 @@ loadOffice(() => {
         }
         console.debug("after excel part - setMainPageRendered = true");
     })
-})   
+})
 
 export default index;
