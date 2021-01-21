@@ -1,5 +1,5 @@
 // import Router from 'next/router';
-import excelActions from './actions.js';
+import excelActions from './actions';
 
 const INITIAL_DATA = {
   isInitialized: false,

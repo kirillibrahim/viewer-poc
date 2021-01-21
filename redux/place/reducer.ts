@@ -1,5 +1,5 @@
 // import Router from 'next/router';
-import placeActions from './actions.js';
+import placeActions from './actions';
 
 const INITIAL_DATA = {
   data: null,

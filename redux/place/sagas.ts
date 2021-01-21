@@ -1,7 +1,6 @@
 // saga.js
 import { all, takeEvery, put } from 'redux-saga/effects';
 import placeActions from './actions';
-import axios from 'axios';
 
 export function* fetchPlaceDataEffect(json) {
   try {

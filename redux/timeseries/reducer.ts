@@ -1,5 +1,5 @@
 // import Router from 'next/router';
-import timeseriesActions from './actions.js';
+import timeseriesActions from './actions';
 
 const INITIAL_DATA = {
   data:null,

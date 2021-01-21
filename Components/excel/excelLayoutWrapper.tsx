@@ -1,7 +1,7 @@
 import React from 'react';
 import { ExcelLayoutContentWrapper } from './excelLayoutWrapper.style';
 
-export default (props) => (
+ const ExcelLayoutWrapper = (props) => (
   <ExcelLayoutContentWrapper
     className={
       props.className != null
@@ -13,3 +13,5 @@ export default (props) => (
     {props.children}
   </ExcelLayoutContentWrapper>
 );
+
+export default ExcelLayoutWrapper;
