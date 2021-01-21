@@ -37,18 +37,26 @@ const nextConfig = {
       },
     env: {
     BACKEND_URL: 'https://localhost:3000',
+    serverRuntimeConfig: {
+      // Will only be available on the server side
+      mySecret: 'secret',
+      secondSecret: process.env.SECOND_SECRET, // Pass through env variables
+    },
+    publicRuntimeConfig: {
+      // Will be available on both server and client
+      staticFolder: '/static',
+    },
+    async redirects() {
+      return [
+        {
+          source: '/',
+          destination: '/excel',
+          permanent: true,
+        },
+      ]
+    },
   },
 //   devtool: "source-map",
-};
-
-const redirect = async redirects =>  {
-  return [
-    {
-      source: '/',
-      destination: '/excel',
-      permanent: true,
-    },
-  ]
 };
 
 module.exports = withPlugins(
@@ -60,8 +68,7 @@ module.exports = withPlugins(
     withCSS,
     withBundleAnalyzer
   ],    
-  nextConfig,
-  redirect
+  nextConfig
   );
 
 //   module.exports = {
