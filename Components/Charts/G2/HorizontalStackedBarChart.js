@@ -26,7 +26,7 @@ const HorizontalStackedBarChart = () => {
         }
     ];
 
-    var config = {
+    let config = {
         data: data,
         isStack: true,
         width: 30,

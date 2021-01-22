@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Tabs } from 'antd';
-import { Card } from 'antd';
 const { TabPane } = Tabs;
 import { Typography } from 'antd';
 const { Title } = Typography;
 import { checkNull } from '../../lib/helpers/utils'
 import TabbedCards from './TabbedCards'
-import { CaretLeftOutlined, CaretRightOutlined } from '@ant-design/icons';
 import GenericDataComponent from './GenericDataComponent';
 import MainTileInstance from './MainTileInstance';
 

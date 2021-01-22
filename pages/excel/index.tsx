@@ -25,14 +25,7 @@ import {
     validate
 } from '../../Components/excel/functions';
 import ExcelLayout from '../../containers-ql/DashBoardLayout/ExcelLayout';
-import getConfig from 'next/config'
 
-// Only holds serverRuntimeConfig and publicRuntimeConfig
-const { serverRuntimeConfig, publicRuntimeConfig } = getConfig()
-// Will only be available on the server-side
-console.log(serverRuntimeConfig.mySecret)
-// Will be available on both server-side and client-side
-console.log(publicRuntimeConfig.staticFolder)
 
 //import OfficeWrapper from '../../Components/excel/officeWrapper'
 

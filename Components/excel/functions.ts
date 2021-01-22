@@ -81,18 +81,18 @@ export function fuzzy(entityType, lookupValue, additionalContext,  invocation: C
  * @returns An incrementing value.
  */
 export function stream(entity: string, propertyName: string, interval: number, invocation: CustomFunctions.StreamingInvocation<number>): void {
-    var baseValue = 0;
+    let baseValue = 0;
     console.log("entering stream, entity is: " + entity);
     console.log(JSON.stringify(invocation))
-    var timer = setInterval(function () {
+    let timer = setInterval(function () {
 
         
-        var icelandic = ["Reykjavík", "Reykjavik", "Iceland", "Ísland"];
-        var british = ["London", "United Kingdom"];
-        var swedish = ["Sweden", "Stockholm"];
-        var norwegian = ["Norway", "Oslo"];
-        var danish = ["Copenhagen", "Denmark"];
-        var american = ["USA", "United States of America", "America"];
+        let icelandic = ["Reykjavík", "Reykjavik", "Iceland", "Ísland"];
+        let british = ["London", "United Kingdom"];
+        let swedish = ["Sweden", "Stockholm"];
+        let norwegian = ["Norway", "Oslo"];
+        let danish = ["Copenhagen", "Denmark"];
+        let american = ["USA", "United States of America", "America"];
         if (baseValue === 0)
         {
             if (icelandic.includes(entity)) {
@@ -142,9 +142,9 @@ function genRand(min, max, decimalPlaces) {
 export function lookup(entity: string, propertyName: string, invocation: CustomFunctions.Invocation) {
 
     console.log("inside lookup")
-    var address = invocation.parameterAddresses[0];
+    let address = invocation.parameterAddresses[0];
     console.log("parameterAddress is: " +address);
-    var settings = getSetting(address);
+    let settings = getSetting(address);
 
     console.log("looking up: " + settings.identifier + "with propertyName: " + propertyName)
 
@@ -195,9 +195,9 @@ export function validate(entity: string) {
  */
 export function timeseries(entity: string, propertyName: string, invocation: CustomFunctions.Invocation) {
     console.log("inside timeseries")
-    var address = invocation.parameterAddresses[0];
+    let address = invocation.parameterAddresses[0];
     console.log("parameterAddress is: " +address);
-    var settings = getSetting(address);
+    let settings = getSetting(address);
 
     return _pushOperation(
         "timeseries",
@@ -219,9 +219,9 @@ export function timeseries(entity: string, propertyName: string, invocation: Cus
  */
 export function timeseriesfiltered(entity: string, propertyName: string, rangeFrom: string, rangeTo: string, fetchHeaders: boolean = false, invocation: CustomFunctions.Invocation) {
     console.log("inside timeserisfiltered")
-    var address = invocation.parameterAddresses[0];
+    let address = invocation.parameterAddresses[0];
     console.log("parameterAddress is: " +address);
-    var settings = getSetting(address);
+    let settings = getSetting(address);
 
     console.log("looking up: " + settings.identifier + "with propertyName: " + propertyName)
 
@@ -324,7 +324,7 @@ function _makeRemoteRequest() {
     //let url = "https://quicklookup.local/api/batch" // ?batchEntries=" + queryString;
     //let url = "https://quicklookupapiapp.azurewebsites.net/api/batch?batchEntries=" + queryString;
 
-    var myHeaders = new Headers({
+    let myHeaders = new Headers({
         'Content-Type': 'application/json',
         'X-Api-Key': 'e74fb723-a022-4f77-a2bd-abfc0207a1b5'
     });
@@ -357,7 +357,7 @@ function _makeRemoteRequest() {
                     else if (response.requestType === "fuzzy") {
                         calledFuzzy = true;
                         console.log("response.requestType=" + response.requestType);
-                        var identifier = response.result.identifier;
+                        let identifier = response.result.identifier;
                         identifier = identifier.substring(identifier.lastIndexOf('/') + 1);
                         batchCopy[index].resolve(response.result.name);
                         try {

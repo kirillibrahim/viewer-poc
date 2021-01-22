@@ -4,8 +4,7 @@ import { Tabs } from 'antd';
 const { TabPane } = Tabs;
 import { Typography } from 'antd';
 const { Title } = Typography;
-import { checkNull } from '../../lib/helpers/utils'
-import { CaretLeftOutlined, CaretRightOutlined } from '@ant-design/icons';
+import { checkNull } from '../../lib/helpers/utils';
 import GenericDataComponent from './GenericDataComponent';
 import UpcomingSignificantDatesInstance from './UpcomingSignificantDatesInstance';
 import TabbedCards from './TabbedCards'

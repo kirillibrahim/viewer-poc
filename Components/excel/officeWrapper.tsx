@@ -110,11 +110,11 @@ const OfficeWrapper = ({ mainPageRendered, rowStyle, colStyle, gutter }) => {
             on("SelectionChanged", event => {
                 let g = getGlobal() as any;
                 Excel.run(ctx => {
-                    var _rangeSelected = ctx.workbook.getSelectedRange().load();
+                    let _rangeSelected = ctx.workbook.getSelectedRange().load();
                     return ctx.sync().then(function () {
                         try {
                             console.log("before")
-                            var setting = getSetting(_rangeSelected.address)
+                            let setting = getSetting(_rangeSelected.address)
                             console.log("after")
 
                             console.log("setting for address" + _rangeSelected.address + " is " + JSON.stringify(setting))
@@ -157,10 +157,10 @@ const OfficeWrapper = ({ mainPageRendered, rowStyle, colStyle, gutter }) => {
     );
 
     function fetchPlace(entity: any) {
-        var delay = 500;
+        let delay = 500;
         clearTimeout(fetchAction);
         setTimeout(function () {
-            var g = getGlobal() as any;
+            let g = getGlobal() as any;
             getPlace(entity.identifier)
             if (g.state != null) {
                 g.state.selectedEntity = entity;

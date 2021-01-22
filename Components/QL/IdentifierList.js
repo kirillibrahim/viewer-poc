@@ -12,7 +12,7 @@ const IdentifierList = () => {
 	const data = useSelector((state) => state.place.data);
 
 	//Mock data:
-	var obj = { name: "", value: "" };
+	let obj = { name: "", value: "" };
 	data.identifierList = [obj, obj, obj, obj]
 	data.identifierList[0].name = 'Wikipedia'
 	data.identifierList[0].value = 'https://en.wikipedia.org/wiki/Reykjavik';

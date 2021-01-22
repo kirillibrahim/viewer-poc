@@ -1,9 +1,6 @@
 import React from 'react';
 import { Layout } from 'antd';
 
-import ThemeSwitcher from '@iso/containers/ThemeSwitcher/ThemeSwitcher';
-
-import siteConfig from '@iso/config/site.config';
 import AppHolder from './ExcelLayout.styles';
 
 const { Content, Footer } = Layout;
@@ -31,7 +28,6 @@ export default function ExcelLayout({ children }) {
             </Content>
           </Layout>
         </Layout>
-        {/* <ThemeSwitcher /> */}
       </Layout>
     </AppHolder>
   );

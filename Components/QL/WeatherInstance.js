@@ -1,9 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import basicStyle from '@iso/assets/styles/constants';
-import { Card } from 'antd';
 import { Row, Col } from 'antd';
-import { Typography, Divider, Space } from 'antd';
+import { Typography, Space } from 'antd';
 const { Title, Paragraph, Text } = Typography;
 
 import SunImage from '@iso/assets/images/weather/Sun-Blue.png';
