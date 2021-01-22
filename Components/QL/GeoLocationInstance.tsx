@@ -2,15 +2,14 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import basicStyle from '@iso/assets/styles/constants';
 import { Card } from 'antd';
-import { Typography, Divider } from 'antd';
+import { Typography } from 'antd';
 const { Title, Paragraph, Text } = Typography;
 
 import GoogleMapReact from 'google-map-react'; //https://github.com/google-map-react/google-map-react
-import { borderRadius } from '@iso/lib/helpers/style_utils';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-const GeoLocation = () => {
+const GeoLocation: React.FC = (): JSX.Element => {
 	const data = useSelector((state) => state.place.data);
 	const props = {
 		center: {

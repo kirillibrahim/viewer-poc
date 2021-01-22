@@ -8,18 +8,17 @@ import { checkNull } from '../../lib/helpers/utils'
 import { CaretLeftOutlined, CaretRightOutlined } from '@ant-design/icons';
 import GenericDataComponent from './GenericDataComponent';
 
-const StatisticsViewer = () => {
+const StatisticalOverView: React.FC = (): JSX.Element => {
 	const data = useSelector((state) => state.place.data);
 	const dataProperties = () => []
-
 	return (
 		<>
 			<div className="tab-card-container">
-				<Title level={3}>Statistics viewer</Title>
+				<Title level={3}>Statistical OverView</Title>
 				<Tabs type="card" defaultActiveKey="1">
 					<TabPane tab={<span> <CaretLeftOutlined /> </span>} key="1">
 						TODO...
-                    {/* <StatisticsViewerInstance /> */}
+					{/* <StatisticalOverViewInstance /> */}
 					</TabPane>
 					<TabPane tab={<span> <CaretRightOutlined /> </span>} key="2">
 						<GenericDataComponent data={data} dataProperties={dataProperties} />
@@ -30,4 +29,4 @@ const StatisticsViewer = () => {
 	);
 }
 
-export default StatisticsViewer;
+export default StatisticalOverView;

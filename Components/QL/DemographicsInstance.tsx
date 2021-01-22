@@ -1,21 +1,21 @@
 import React from 'react';
-import dynamic from "next/dynamic";
 import { useSelector } from 'react-redux';
 import basicStyle from '@iso/assets/styles/constants';
 import { Card } from 'antd';
-import { Row, Col } from 'antd';
 import { Typography, Divider, Space } from 'antd';
 const { Title, Paragraph, Text } = Typography;
 
-import newbornImage from '@iso/assets/images/demographics/baby.png';
-import growthImage from '@iso/assets/images/demographics/Growth-icon.png';
-import genderImage from '@iso/assets/images/demographics/gender.png';
-import ageImage from '@iso/assets/images/demographics/age.png';
+import {
+    newbornImage,
+    growthImage,
+    genderImage,
+    ageImage
+} from "@iso/assets";
 
 import SymmetricBarChart from '../Charts/AntDesign/SymmetricBarChart'
 import HorizontalStackedBarChart from '../Charts/G2/HorizontalStackedBarChart'
 
-const DemographicsInstance = () => {
+const DemographicsInstance:React.FC = (): JSX.Element => {
     const data = useSelector((state) => state.place.data);
 
     const { rowStyle, colStyle, gutter } = basicStyle;

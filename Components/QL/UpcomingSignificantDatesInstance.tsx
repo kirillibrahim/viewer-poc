@@ -9,22 +9,14 @@ import Link from 'next/link'
 import { Typography, Divider } from 'antd';
 const { Title, Paragraph, Text } = Typography;
 
-//TODO: Is this the best way to do this? See comment in GetIcon().
-import christianIcon from '@iso/assets/images/SpecialDays/Christian.png';
-import nationalHollidayIcon from '@iso/assets/images/SpecialDays/NationalHolliday.png';
-import observanceIcon from '@iso/assets/images/SpecialDays/observance.png';
-import hinduIcon from '@iso/assets/images/SpecialDays/Hindu.png';
-import muslimIcon from '@iso/assets/images/SpecialDays/Muslim.png';
-import silentDayIcon from '@iso/assets/images/SpecialDays/SilentDay.png';
-import weekdayIcon from '@iso/assets/images/SpecialDays/Weekday.png';
-// permutation icons
-import religiousNationalHolliday from '@iso/assets/images/SpecialDays/permutations/religiousNationalHolliday.png';
-import religiousObservance from '@iso/assets/images/SpecialDays/permutations/religiousObservance.png';
-import religiousSilentDay from '@iso/assets/images/SpecialDays/permutations/religiousSilentDay.png';
 
-import { lookupByIdentifier, timeseriesByIdentifier } from '../../Components/excel/commands'
+import { christianIcon, nationalHollidayIcon, observanceIcon,  hinduIcon, muslimIcon, silentDayIcon, 
+    weekdayIcon,  religiousNationalHolliday, religiousObservance, religiousSilentDay} from "@iso/assets";
 
-const UpcomingSignificantDatesInstance = () => {
+
+import { lookupByIdentifier, timeseriesByIdentifier } from '../excel/commands'
+
+const UpcomingSignificantDatesInstance: React.FC = (): JSX.Element => {
     const data = useSelector((state) => state.place.data);
     const dataProperties = (e) => [
         {

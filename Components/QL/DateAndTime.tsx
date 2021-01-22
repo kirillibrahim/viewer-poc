@@ -9,7 +9,7 @@ import DateAndTimeInstance from './DateAndTimeInstance';
 import GenericDataComponent from './GenericDataComponent';
 import TabbedCards from './TabbedCards'
 
-const DateAndTime = () => {
+const DateAndTime: React.FC = (): JSX.Element => {
     const data = useSelector((state) => state.place.data);
     const dataProperties = () =>
         [

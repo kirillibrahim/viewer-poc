@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import basicStyle from '@iso/assets/styles/constants';
-import { Image, Drawer, Button, Divider } from 'antd';
+import { Image, Divider } from 'antd';
 import { Card } from 'antd';
 import { Row, Col } from 'antd';
 import { Collapse } from 'antd';
@@ -12,7 +12,7 @@ const { Title, Paragraph, Text } = Typography;
 import { PhoneIcon, EmailIcon, FaxIcon, WebIcon, FacebookIcon, LinkedInIcon, InstagramIcon } from './MainTileInstanceIcons';
 import MainTileInstanceMore from './MainTileInstanceMore';
 
-const MainTileInstance = () => {
+const MainTileInstance: React.FC = (): JSX.Element => {
 	const data = useSelector((state) => state.place.data);
 	const { rowStyle, colStyle, gutter } = basicStyle;
 

@@ -9,7 +9,7 @@ import GenericDataComponent from './GenericDataComponent';
 import PopulationInstance from './PopulationInstance';
 import TabbedCards from './TabbedCards'
 
-const Population = () => {
+const Population: React.FC = (): JSX.Element => {
     const data = useSelector((state) => state.place.data);
 
     const dataProperties = () =>

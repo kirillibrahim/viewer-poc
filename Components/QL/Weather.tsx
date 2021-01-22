@@ -9,7 +9,7 @@ import GenericDataComponent from './GenericDataComponent';
 import WeatherInstance from './WeatherInstance';
 import TabbedCards from './TabbedCards'
 
-const Weather = () => {
+const Weather: React.FC = (): JSX.Element => {
     const data = useSelector((state) => state.place.data);
 
     const dataProperties = () => [

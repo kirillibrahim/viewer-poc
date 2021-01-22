@@ -8,7 +8,7 @@ import { checkNull } from '../../lib/helpers/utils'
 import { CaretLeftOutlined, CaretRightOutlined } from '@ant-design/icons';
 import GenericDataComponent from './GenericDataComponent';
 
-const AvailableTimeSeries = () => {
+const AvailableTimeSeries: React.FC = (): JSX.Element => {
 	const data = useSelector((state) => state.place.data);
 	const dataProperties = () => []
 

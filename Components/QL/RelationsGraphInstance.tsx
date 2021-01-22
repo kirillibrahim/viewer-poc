@@ -3,28 +3,20 @@ import { useSelector } from 'react-redux';
 import basicStyle from '@iso/assets/styles/constants';
 import { Card } from 'antd';
 import { Typography, Divider } from 'antd';
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph, Text, Link } = Typography;
 
-const SpecialDaysInstance = () => {
+const RelationsGraphInstance: React.FC = (): JSX.Element => {
 	const data = useSelector((state) => state.place.data);
 
 	const { rowStyle, colStyle, gutter } = basicStyle;
 	return (
 		<>
 			<Card
-				style={{}}>
-
-				<div>
-					<b>TODO:</b>:
-				{/* TODO: Create data */}
-					{/* {data.specialDays && (
-						data.specialDays
-					)} */}
-				</div>
-
+				hoverable
+				style={{}} >
 			</Card>
 		</>
 	);
 }
 
-export default SpecialDaysInstance;
+export default RelationsGraphInstance;

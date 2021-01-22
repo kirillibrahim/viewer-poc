@@ -8,7 +8,7 @@ import { checkNull } from '../../lib/helpers/utils'
 import { CaretLeftOutlined, CaretRightOutlined } from '@ant-design/icons';
 import GenericDataComponent from './GenericDataComponent';
 
-const IdentifierList = () => {
+const IdentifierList: React.FC = (): JSX.Element => {
 	const data = useSelector((state) => state.place.data);
 
 	//Mock data:

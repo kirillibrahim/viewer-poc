@@ -6,10 +6,10 @@ import { Typography } from 'antd';
 const { Title } = Typography;
 import { checkNull } from '../../lib/helpers/utils';
 import GenericDataComponent from './GenericDataComponent';
-import DemographicsInstance from './DemographicsInstance';
+import DemographicsInstance from './DemographicsInstance.tsx';
 import TabbedCards from './TabbedCards'
 
-const Demographics = () => {
+const Demographics: React.FC = (): JSX.Element => {
     const data = useSelector((state) => state.place.data);
     const dataProperties = () =>
         [

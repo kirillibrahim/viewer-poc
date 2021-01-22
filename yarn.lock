@@ -5022,11 +5022,6 @@ classnames@2.2.6, classnames@2.x, classnames@^2.2.1, classnames@^2.2.3, classnam
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
 
-cldrjs@^0.5.4:
-  version "0.5.5"
-  resolved "https://registry.yarnpkg.com/cldrjs/-/cldrjs-0.5.5.tgz#5c92ca2de89a8a16dea76cb2dfc4e00104428e52"
-  integrity sha512-KDwzwbmLIPfCgd8JERVDpQKrUUM1U4KpFJJg2IROv89rF172lLufoJnqJ/Wea6fXL5bO6WjuLMzY8V52UWPvkA==
-
 clean-css@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.3.tgz#507b5de7d97b48ee53d84adb0160ff6216380f78"
@@ -8314,11 +8309,6 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-frappe-charts@^1.5.2:
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/frappe-charts/-/frappe-charts-1.5.4.tgz#5870f77ac6ffc8ea4dab32adda1d4e5e4fbda64b"
-  integrity sha512-hBr7cRLmsCC5VBj/HwKOCgdwyXnkeAO5CAvOd5H4IYFbk84VD9jOjx9fSaqAE0MygVVbY1nCN+5nb08WThW4Xw==
-
 fresh@0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
@@ -8650,13 +8640,6 @@ global@^4.3.1:
   dependencies:
     min-document "^2.19.0"
     process "^0.11.10"
-
-globalize@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/globalize/-/globalize-1.6.0.tgz#b6c659cfa6a47fa1a8279187a45689560d8591b1"
-  integrity sha512-MTuAU3Tnbtga8PvxbpSPdQNIs6K5UdATWIuarWJK2Z3e1DghXpxb/GmShSVagzHqCOYgZr7N/Hi7D1mrHG30jQ==
-  dependencies:
-    cldrjs "^0.5.4"
 
 globals@^11.1.0:
   version "11.12.0"

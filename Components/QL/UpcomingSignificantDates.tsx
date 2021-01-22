@@ -9,7 +9,7 @@ import GenericDataComponent from './GenericDataComponent';
 import UpcomingSignificantDatesInstance from './UpcomingSignificantDatesInstance';
 import TabbedCards from './TabbedCards'
 
-const UpcomingSignificantDates = () => {
+const UpcomingSignificantDates: React.FC = (): JSX.Element => {
     const data = useSelector((state) => state.place.data);
     const dataProperties = () => [
         {

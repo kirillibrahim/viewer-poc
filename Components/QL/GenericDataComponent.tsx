@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import basicStyle from '@iso/assets/styles/constants';
 import { Card, Table, Button } from 'antd';
 import { CheckIfUrl } from '../../lib/helpers/utils'
-import grabIcon from '@iso/assets/images/grabicon/Grab-line-Blue-inverted.png';
-import { lookupByIdentifier, timeseriesByIdentifier } from '../../Components/excel/commands'
+import  { grabIcon } from '@iso/assets';
+import { lookupByIdentifier, timeseriesByIdentifier } from '../excel/commands'
 
 const timeSeriesFields = ["populationMale", "populationFemale", "year", "midPeriod", "founders", "investors", "populationTotal", "populationDensity"];
 
-const GenericDataComponent = ({ data, dataProperties, nestedArrays }) => {
+const GenericDataComponent: React.FC =  ({ data, dataProperties, nestedArrays }): JSX.Element => {
     const { rowStyle, colStyle, gutter } = basicStyle;
 
     const columns = [

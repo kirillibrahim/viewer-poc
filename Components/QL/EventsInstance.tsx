@@ -2,9 +2,9 @@ import React from "react";
 import { useSelector } from 'react-redux';
 import reqwest from "reqwest";
 
-import { List, Card, message, Avatar, Spin } from "antd";
+import { List, Card, message, Spin } from "antd";
 import { Image, Row, Col } from 'antd';
-import { Typography, Divider, Space } from 'antd';
+import { Typography, Space } from 'antd';
 const { Title, Paragraph, Text } = Typography;
 
 import InfiniteScroll from 'react-infinite-scroller';
@@ -13,7 +13,7 @@ import InfiniteScroll from 'react-infinite-scroller';
 // Uses Antd List component from here https://ant.design/components/list/
 // And WHEN we are ready for real infinite scrolling and virtualized rendering we should look there for examples! 
 
-const EventsInstance = () => {
+const EventsInstance: React.FC = (): JSX.Element => {
   const state = {
     loading: false,
     hasMore: true

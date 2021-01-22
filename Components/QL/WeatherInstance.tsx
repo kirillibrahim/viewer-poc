@@ -5,14 +5,9 @@ import { Row, Col } from 'antd';
 import { Typography, Space } from 'antd';
 const { Title, Paragraph, Text } = Typography;
 
-import SunImage from '@iso/assets/images/weather/Sun-Blue.png';
-import WindRainCloudImage from '@iso/assets/images/weather/Wind-Rain-cloud-Blue.png';
-import SunRainCloudImage from '@iso/assets/images/weather/Sun-rain-cloud-Blue@2x.png';
-import selectedCelsiusImage from '@iso/assets/images/temperature/celsiusSelected.png';
-import unselectedFarenheitImage from '@iso/assets/images/temperature/farenheitUnselected.png';
-import unselectedKelvinImage from '@iso/assets/images/temperature/kelvinUnselected-2.png';
+import { SunImage, WindRainCloudImage, SunRainCloudImage,  selectedCelsiusImage, unselectedFarenheitImage, unselectedKelvinImage } from "@iso/assets";
 
-const WeatherInstance = () => {
+const WeatherInstance: React.FC = (): JSX.Element =>  {
     let data = useSelector((state) => state.place.data);
 
     const { rowStyle, colStyle, gutter } = basicStyle;

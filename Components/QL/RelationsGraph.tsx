@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { Tabs } from 'antd';
 const { TabPane } = Tabs;
 import { Typography } from 'antd';
 const { Title } = Typography;
-import { checkNull } from '../../lib/helpers/utils'
 import { CaretLeftOutlined, CaretRightOutlined } from '@ant-design/icons';
 import GenericDataComponent from './GenericDataComponent';
 import RelationsGraphInstance from './RelationsGraphInstance';
 
-const RelationsGraph = () => {
+const RelationsGraph: React.FC = (): JSX.Element => {
     const data = useSelector((state) => state.place.data);
     const dataProperties = () => []
     return (

@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import basicStyle from '@iso/assets/styles/constants';
-import { Image, Drawer, Button, Divider } from 'antd';
-import { Card } from 'antd';
+import { Divider } from 'antd';
 import { Row, Col } from 'antd';
 import { Collapse } from 'antd';
 const { Panel } = Collapse;
 import { Typography, Space } from 'antd';
-const { Title, Paragraph, Text } = Typography;
+const { Title, Text } = Typography;
 
 import { PhoneIcon, EmailIcon, FaxIcon, WebIcon, FacebookIcon, LinkedInIcon, InstagramIcon } from './MainTileInstanceIcons'
 
-const MainTileInstanceMore = () => {
+const MainTileInstanceMore: React.FC = (): JSX.Element => {
     const data = useSelector((state) => state.place.data);
     const { rowStyle, colStyle, gutter } = basicStyle;
     

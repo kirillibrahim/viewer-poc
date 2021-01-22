@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { Tabs } from 'antd';
 const { TabPane } = Tabs;
@@ -9,7 +9,7 @@ import { CaretLeftOutlined, CaretRightOutlined } from '@ant-design/icons';
 import GenericDataComponent from './GenericDataComponent';
 import SpecialDaysInstance from './SpecialDaysInstance';
 
-const SpecialDays = () => {
+const SpecialDays: React.FC = (): JSX.Element => {
     const data = useSelector((state) => state.place.data);
     const dataProperties = () => []
     return (
